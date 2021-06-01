@@ -53,6 +53,8 @@ public class TelegramBot extends TelegramLongPollingBot {
 
     }
 
+
+
     @SneakyThrows
     @Override
     public void onUpdateReceived(Update update) {
@@ -91,6 +93,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                 execute(new SendMessage(String.valueOf(update.getMessage().getChatId()), kmer + " - " + replicationPointFinder.getMaxIndex() + "\n\n" + ori));
             }
             File localFile = new File("src/main/resources/uploaded_files/" + f.getFileName());
+            SendMessage sendMessage = new SendMessage();
 
             FileUtils.deleteQuietly(localFile);
         }
