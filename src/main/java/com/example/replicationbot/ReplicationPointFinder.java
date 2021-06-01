@@ -85,7 +85,7 @@ public class ReplicationPointFinder {
         }
         AtomicInteger i = new AtomicInteger();
         return res.entrySet().stream().peek(kmer -> {
-            //System.out.print(k + " - " + String.format("%.1f", (double) i.getAndIncrement() / (double) res.size()) + '\n');
+            System.out.print(k + " - " + String.format("%.1f", (double) i.getAndIncrement() / (double) res.size()) + '\n');
             var existKmer = ContainsInHashmapWithMismatch(res, kmer.getKey(), mismatches);
             var rev = reverse(kmer.getKey());
 
